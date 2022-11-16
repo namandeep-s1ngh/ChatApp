@@ -106,7 +106,7 @@ export class NotificationApplication extends BootMixin(
     this.bind(SNSBindings.Config).to({});
     this.bind(NotificationBindings.PushProvider).toProvider(SocketIOProvider);
     this.bind(SocketBindings.Config).to({
-      url: 'ws://localhost:3000',
+      url: `${process.env.SOCKET_URL}`,
       defaultPath: 'general-message',
       options: {},
     });
